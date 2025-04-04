@@ -34,7 +34,7 @@ body {
 }
 
 .input-message {
-    width: calc(100% - 90px);
+    width: calc(100% - 130px);
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -44,7 +44,7 @@ body {
 }
 
 .send-button {
-    width: 70px;
+    width: 100px;
     padding: 10px;
     border-radius: 5px;
     border: none;
