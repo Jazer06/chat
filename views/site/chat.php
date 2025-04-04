@@ -20,8 +20,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #121212; 
     color: #ffffff; 
-    padding: 20px;
+    padding: 20px; 
 }
+
 </style>
 <script>
 let conn;
