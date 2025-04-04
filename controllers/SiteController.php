@@ -131,10 +131,10 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             $username = Yii::$app->user->identity->username;
         } else {
-            // Генерируем уникальное имя для гостя
+
             $guestCount = \Yii::$app->cache->get('guest_count') ?: 0;
             $guestCount++;
-            \Yii::$app->cache->set('guest_count', $guestCount, 3600); // Сохраняем счетчик на 1 час
+            Yii::$app->cache->set('guest_count', $guestCount, 3600); 
             $username = 'Гость' . $guestCount;
         }
 
@@ -143,13 +143,5 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionGetHistory()
-    {
-        $messages = ChatMessage::find()
-            ->orderBy(['created_at' => SORT_ASC])
-            ->asArray()
-            ->all();
-        
-        return $this->asJson($messages);
-    }
+
 }
